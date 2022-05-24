@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Forgot Password</title>
+      <link rel="stylesheet" href="Forgot.css">
+      <script src="https://kit.fontawesome.com/f9f120631b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+<div class="navbar">
+  <a href="index.html" class="active"><i class="fa-solid fa-house-user"></i> Home</a>
+  <a href="about.html"><i class="fa-solid fa-address-card"></i> About</a>
+  <a href="contact.html"><i class="fa-solid fa-envelopes-bulk"></i> Contact</a>
+  <a href="login.html"><i class="fa-solid fa-user"></i> Login</a>
+  <a href="gs.html" class="right"> Get Started!</a>
+  <a href="reports.html"><i class="fa-solid fa-file-circle-check"></i> Reports</a>
+</div>
+<style>
+  .navbar {
+  overflow: auto;
+  background-color: rgba(118, 23, 170, 1);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Navbar Links Styled */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-Aligned Logo */
+.navbar a.right {
+  float: right;
+}
+
+/* Color Change on Hover */
+.navbar a:hover {
+  background-color: rgb(91, 5, 126);
+  color: rgba(128, 17, 219, 0.938);
+}
+
+/* Active/Current Link */
+.navbar a.active {
+  background-color: rgb(91, 5, 126);
+  color: white;
+}
+
+/* Add Responsiveness */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + /* + ... Add "container" for each page */ {
+  padding-top: 60px;
+}
+* {box-sizing: border-box}
+
+body {
+    background-color: #e6e6ff;
+}
+.container {
+  padding: 16px;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #ffffff;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ffffff;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #ffffff;
+  margin-bottom: 25px;
+}
+
+.submitbtn {
+  background-color: #9966ff;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+a {
+  color: #9966ff;
+}
+
+.signin {
+  background-color: #ffffff;
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+}
+</style>
+
+<script>
+  window.onscroll = function() {myFunction()};
+  
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+  </script>
+    <form> <!--Link to confirmation page-->
+        <div class="container">
+          <h1>Forgot Password?</h1>
+          <p>Please enter your email or phone number to reset your password.</p>
+          <hr>
+          
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" id="email" required>
+          
+          <label for="phone_number"><b>Phone Number</b></label>
+          <input type="text" placeholder="Enter Phone Number" name="phone_number" id="phone_number" required>
+          <a href="confirm.html">
+            <button type="submit" class="submitbtn">Submit</button>
+          </a>
+        </div>
+        <div class="container signin">
+        <!--Link to homepage-->
+          <p>Already have an account? <a href="login.html">Sign in</a>.</p>
+        </div>
+    </body>
+    </form>
+</html>

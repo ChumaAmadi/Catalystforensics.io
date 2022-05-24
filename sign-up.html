@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registration Form</title>
+    <script src="https://kit.fontawesome.com/f9f120631b.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="sign-up.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html" class="active"><i class="fa-solid fa-house-user"></i> Home</a>
+        <a href="about.html"><i class="fa-solid fa-address-card"></i> About</a>
+        <a href="contact.html"><i class="fa-solid fa-envelopes-bulk"></i> Contact</a>
+        <a href="login.html"><i class="fa-solid fa-user"></i> Login</a>
+        <a href="gs.html" class="right"> Get Started!</a>
+    </div>
+
+<style>
+.navbar {
+  overflow: auto;
+  background-color: rgba(118, 23, 170, 1);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Navbar Links Styled */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-Aligned Logo */
+.navbar a.right {
+  float: right;
+}
+
+/* Color Change on Hover */
+.navbar a:hover {
+  background-color: rgb(91, 5, 126);
+  color: rgba(128, 17, 219, 0.938);
+}
+
+/* Add Responsiveness */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .formContainer {
+  padding-top: 60px;
+}
+
+body{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-image: url("back.png");
+}
+
+* {box-sizing: border-box}
+input[type=text], input[type=password] {
+   width: 100%;
+   font-size: 13px;
+   padding: 14px;
+   margin: 5px 0 22px 0;
+   display: inline-block;
+   border: none;
+   background: #f1f1f1;
+}
+
+label{
+   font-size: 15px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+   background-color: #ddd;
+   outline: none;
+}
+
+hr {
+   border: 1px solid #f1f1f1;
+   margin-bottom: 25px;
+}
+
+button {
+   font-size: 18px;
+   font-weight: bold;
+   background-color: rgba(118, 23, 170, 1);
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+   opacity: 0.9;
+}
+
+button:hover {
+   opacity:1;
+}
+
+.cancel {
+   padding: 14px 20px;
+   background-color: #4b0fee;
+}
+
+.formContainer {
+   padding: 16px;
+}
+
+.formContainer p    {
+   font-size: 28px;
+}
+</style>
+
+<form method="post">
+    <div class="formContainer">
+        <h1>Sign Up Form</h1>
+    <hr>
+        <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+        <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+        <label for="repeatPassword"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="repeatPassword"
+            required>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+    <div>
+        <a href="index.html"><button type="button" class="cancel">Cancel</button></a>
+        <a href="confirm.html"><button type="button" class="signup">Sign Up</button></a>
+    </div>
+</div>
+</form>
+
+<script>
+  window.onscroll = function() {myFunction()};
+  
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+</script>
+</body>
+</html>

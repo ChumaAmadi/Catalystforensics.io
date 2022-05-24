@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/f9f120631b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="about.css">
+    <title>About</title>
+</head>
+
+<body>
+
+<div class="bg-image">
+
+<!--Navbar HTML-->
+<div class="navbar">
+  <a href="index.html" class="active"><i class="fa-solid fa-house-user"></i> Home</a>
+  <a href="about.html"><i class="fa-solid fa-address-card"></i> About</a>
+  <a href="contact.html"><i class="fa-solid fa-envelopes-bulk"></i> Contact</a>
+  <a href="login.html"><i class="fa-solid fa-user"></i> Login</a>
+  <a href="gs.html" class="right"> Get Started!</a>
+  <a href="reports.html"><i class="fa-solid fa-file-circle-check"></i> Reports</a>
+</div>
+
+<!--Navbar Styling-->
+<style>
+  .navbar {
+  overflow: auto;
+  background-color: rgba(118, 23, 170, 1);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Navbar Links Styled */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-Aligned Logo */
+.navbar a.right {
+  float: right;
+}
+
+/* Color Change on Hover */
+.navbar a:hover {
+  background-color: rgb(91, 5, 126);
+  color: rgba(128, 17, 219, 0.938);
+}
+
+/* Add Responsiveness */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .bg-image {
+  padding-top: 60px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body, html  {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: url("../cursors/blue.cur"), auto !important;
+  text-align: center;
+}
+
+.bg-image {
+  background-image: url("back.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ltext  {
+  text-align: center;
+  width: 97.3%;
+  margin: 0;
+}
+
+/* Slideshow Styling */
+.wrapper {
+  position: relative;
+  height: 60.8vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+}
+.slideshow--hero {
+  z-index: 3;
+  left: 0;
+  top: 50%;
+  height: 85%;
+  transform: translateY(-50%) skewY(-10deg);
+  transform-origin: center;
+  overflow: hidden;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+}
+.slideshow--hero .slides {
+  position: absolute;
+  left: 0;
+  top: -10%;
+  width: 100vw;
+  height: 100vh;
+  animation: 11s slideshow-hero-mobile -3s infinite;
+}
+.slideshow--hero .slide1 {
+  background-image: url(css.PNG);
+  animation: 20s slides-set-1 -0.1s infinite;
+}
+.slideshow--hero .slide2 {
+  background-image: url(py.PNG);
+  animation: 20s slides-set-2 -0.1s infinite;
+}
+.slideshow--hero .slide3 {
+  background-image: url(html.PNG);
+  animation: 20s slides-set-3 -0.1s infinite;
+}
+@media (min-width: 600px) {
+  .slideshow--hero {
+    left: 50%;
+    top: 0;
+    width: 67%;
+    height: 100%;
+    transform: translateX(-50%) skewX(-10deg);
+ }
+  .slideshow--hero .slides {
+    top: 0;
+    left: -25%;
+    height: 100%;
+    animation: 11s slideshow-hero -3s infinite;
+ }
+}
+.slideshow--contrast {
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+  transform: none;
+}
+.slideshow--contrast--before {
+  left: 0;
+}
+.slideshow--contrast--before .slides {
+  width: 100vw;
+}
+.slideshow--contrast--after {
+  z-index: 2;
+  left: auto;
+  right: 0;
+}
+.slideshow--contrast--after .slides {
+  width: 100vw;
+  left: auto;
+  right: 0;
+}
+.slideshow--contrast .slides {
+  animation: 14s slideshow-contrast -5s infinite;
+}
+.slideshow--contrast .slide1 {
+  background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(250, 250, 250, 0.068) 100%), url(city.jpg);
+  animation: 20s slides-set-1 -0.2s infinite;
+}
+.slideshow--contrast .slide2 {
+  background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(250, 250, 250, 0.068) 100%), url(cloud.jpg);
+  animation: 20s slides-set-2 -0.2s infinite;
+}
+.slideshow--contrast .slide3 {
+  background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(250, 250, 250, 0.068) 100%), url(street.jpg);
+  animation: 20s slides-set-3 -0.2s infinite;
+}
+.slideshow--contrast--after {
+  top: auto;
+  bottom: 0;
+}
+.slideshow--contrast--after .slides {
+  animation: 13s slideshow-contrast -13s infinite;
+}
+.slideshow--contrast--after .slide {
+  background-position: right;
+}
+.slideshow--contrast--after .slide1 {
+  animation: 20s slides-set-1 infinite;
+}
+.slideshow--contrast--after .slide2 {
+  animation: 20s slides-set-2 infinite;
+}
+.slideshow--contrast--after .slide3 {
+  animation: 20s slides-set-3 infinite;
+}
+@media (min-width: 600px) {
+  .slideshow--contrast {
+    width: 50%;
+    height: 100%;
+ }
+  .slideshow--contrast--after {
+    top: 0;
+    bottom: auto;
+ }
+  .slideshow--contrast--after .slides {
+    width: 50vw;
+ }
+}
+.slides, .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@keyframes slideshow-hero-mobile {
+  0% {
+    transform: scale(1) skewY(10deg);
+ }
+  50% {
+    transform: scale(1.05) skewY(10deg);
+ }
+  100% {
+    transform: scale(1) skewY(10deg);
+ }
+}
+@keyframes slideshow-hero {
+  0% {
+    transform: scale(1) skewX(10deg);
+ }
+  50% {
+    transform: scale(1.05) skewX(10deg);
+ }
+  100% {
+    transform: scale(1) skewX(10deg);
+ }
+}
+@keyframes slideshow-contrast {
+  0% {
+    transform: scale(1.05);
+ }
+  50% {
+    transform: scale(1);
+ }
+  100% {
+    transform: scale(1.05);
+ }
+}
+@keyframes slides-set-1 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+ }
+  31% {
+    opacity: 1;
+    transform: scale(1);
+ }
+  34% {
+    opacity: 0;
+    transform: scale(1.05);
+ }
+  97% {
+    opacity: 0;
+    transform: scale(1.05);
+ }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+ }
+}
+@keyframes slides-set-2 {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+ }
+  31% {
+    opacity: 0;
+    transform: scale(1.05);
+ }
+  34% {
+    opacity: 1;
+    transform: scale(1);
+ }
+  64% {
+    opacity: 1;
+    transform: scale(1);
+ }
+  67% {
+    opacity: 0;
+    transform: scale(1.05);
+ }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+ }
+}
+@keyframes slides-set-3 {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+ }
+  64% {
+    opacity: 0;
+    transform: scale(1.05);
+ }
+  67% {
+    opacity: 1;
+    transform: scale(1);
+ }
+  97% {
+    opacity: 1;
+    transform: scale(1);
+ }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+ }
+}
+</style>
+
+<script>
+  window.onscroll = function() {myFunction()};
+  
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+</script>
+  
+    <h2>What Is Our Project About?</h2>
+        <p> Our project is about identifying suspicious network/web traffic. Our program, Catalyst Web Sniffer
+            (CWS) detects identifies suspicious packets based on many specially designed filters designed
+            by Savvas.
+        </p> 
+        <p> The program works with Wireshark to identify suspicious packets. Meanwhile, the CWS
+            also creates a .png file with the suspicious activity laid out graphically. A form of visualizition
+            like a graph makes the data much easier to understand.
+        </p>
+    <h3>Typescripts/Languages & Programs We Used</h3>
+        
+    <!--List of Items-->
+    <div class="ltext">
+        <ul style="list-style-type:none">
+            <li>Wireshark</li>
+            <li>Webflow</li>
+            <li>VIM</li>
+            <li>Python</li>
+            <li>Javascript</li>
+            <li>PHP</li>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+</div>
+
+<!-- Slideshow -->
+<div class="wrapper">
+    <div class="slideshows">
+      <div class="slideshow slideshow--hero">
+        <div class="slides">
+          <div class="slide slide1"></div>
+          <div class="slide slide2"></div>
+          <div class="slide slide3"></div>
+        </div>
+      </div>
+      <div class="slideshow slideshow--contrast slideshow--contrast--before">
+        <div class="slides">
+          <div class="slide slide1"></div>
+          <div class="slide slide2"></div>
+          <div class="slide slide3"></div>
+        </div>
+      </div>
+      <div class="slideshow slideshow--contrast slideshow--contrast--after">
+        <div class="slides">
+          <div class="slide slide1"></div>
+          <div class="slide slide2"></div>
+          <div class="slide slide3"></div>
+        </div>
+        </div>
+      </div>
+      </div>
+  </div>
+  </body>
+</html>

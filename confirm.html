@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/f9f120631b.js" crossorigin="anonymous"></script>
+  <title>Success!</title>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet">
+  <link href="confirm.css" rel="stylesheet">
+</head>
+
+<body>
+<!--Navbar HTML-->
+<div class="navbar">
+  <a href="index.html" class="active"><i class="fa-solid fa-house-user"></i> Home</a>
+  <a href="about.html"><i class="fa-solid fa-address-card"></i> About</a>
+  <a href="contact.html"><i class="fa-solid fa-envelopes-bulk"></i> Contact</a>
+  <a href="login.html"><i class="fa-solid fa-user"></i> Login</a>
+  <a href="gs.html" class="right"> Get Started!</a>
+  <a href="reports.html"><i class="fa-solid fa-file-circle-check"></i> Reports</a>
+</div>
+
+<!--Navbar Styling-->
+<style>
+  .navbar {
+  overflow: auto;
+  background-color: rgba(118, 23, 170, .75);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Navbar Links Styled */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-Aligned Logo */
+.navbar a.right {
+  float: right;
+}
+
+/* Color Change on Hover */
+.navbar a:hover {
+  background-color: rgb(91, 5, 126);
+  color: rgba(128, 17, 219, 0.938);
+}
+
+/* Active/Current Link */
+.navbar a.active {
+  background-color: rgb(91, 5, 126);
+  color: white;
+}
+
+/* Add Responsiveness */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e8ed',GradientType=0 );
+      height: 100%;
+          margin: 0;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+    
+}
+
+.wrapper_1 { 
+    width: 75%;
+    height: 115vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: "Kaushan Script", cursive;
+    font-size: 4em;
+    letter-spacing: 2.3px;
+    text-align: center;
+    color: #7617aa;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.active {
+    margin: auto;
+    color: #ffffff;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+.footer_like {
+    margin-top: auto; 
+    background: #7617aa;
+    padding: 6px;
+    text-align: center;
+}
+
+.footer_like p {
+    margin: 0;
+    padding: 4px;
+    color: #fff;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 1px;
+}
+
+@media (min-width:360px){
+    h1  {
+      font-size: 4.5em;
+    }
+    .go_home    {
+      margin-bottom: 24px;
+    }
+}
+@media (min-width:600px)    {
+    .content    {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+    .wrapper_1  {
+    height: initial;
+    max-width: 620px;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 4px 8px 40px 8px #7617aa;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    margin: -60px 0 0 -60px;
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+        } 
+    }
+}
+</style>
+
+<script>
+  window.onscroll = function() {myFunction()};
+  
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+<form>
+  <div class="content">
+    <div class="wrapper_1">
+        <h1>Success !</h1>
+            <a href="index.html" class="active"><i class="fa-solid fa-house-user"></i></a>
+              <div class="footer_like">
+                <p>Thank you for using Catalyst Forensics!</p>
+            </div>
+          </div>
+        </div>
+      </form>
+    <img src="catalyst.png" alt="Catalyst Forensics" class="center">
+  </body>
+</html>

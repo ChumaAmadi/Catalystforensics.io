@@ -1,0 +1,84 @@
+<!--Logos-->
+<script src="https://kit.fontawesome.com/f9f120631b.js" crossorigin="anonymous"></script>
+
+<!--Navbar HTML-->
+<div class="navbar">
+  <a href="index.html" class="active"><i class="fa-solid fa-house-user"></i> Home</a>
+  <a href="about.html"><i class="fa-solid fa-address-card"></i> About</a>
+  <a href="contact.html"><i class="fa-solid fa-envelopes-bulk"></i> Contact</a>
+  <a href="login.html"><i class="fa-solid fa-user"></i> Login</a>
+  <a href="gs.html" class="right"> Get Started!</a>
+</div>
+
+<!--Navbar Styling-->
+<style>
+  .navbar {
+  overflow: auto;
+  background-color: rgba(118, 23, 170, 1);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Navbar Links Styled */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-Aligned Logo */
+.navbar a.right {
+  float: right;
+}
+
+/* Color Change on Hover */
+.navbar a:hover {
+  background-color: rgb(91, 5, 126);
+  color: rgba(128, 17, 219, 0.938);
+}
+
+/* Active/Current Link */
+.navbar a.active {
+  background-color: rgb(91, 5, 126);
+  color: white;
+}
+
+/* Add Responsiveness */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + /* + ... Add "container" for each page */ {
+  padding-top: 60px;
+}
+</style>
+
+<script>
+  window.onscroll = function() {myFunction()};
+  
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+  </script>
